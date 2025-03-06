@@ -2,7 +2,7 @@ ui_print("Mounting sdcard...");
 run_program("/system/bin/mkdir", "/m");
 
 ui_print("Mounting rootfs...");
-run_program("/system/bin/mount", "/sdcard/rootfs.img", "/m");
+run_program("/system/bin/mount", "/data/rootfs.img", "/m");
 
 ui_print("Applying adaptation...");
 run_program("/system/bin/rm", "/m/etc/pulse/default.pa");
