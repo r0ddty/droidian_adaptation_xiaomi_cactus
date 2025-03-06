@@ -1,12 +1,11 @@
 ui_print("Mounting sdcard...");
-run_program("/system/bin/mkdir", "/m");
+run_program("/sbin/rm", "-rf", "/m");
+run_program("/sbin/mkdir", "/m");
 
 ui_print("Mounting rootfs...");
-run_program("/system/bin/mount", "/data/rootfs.img", "/m");
+run_program("/sbin/mount", "/data/rootfs.img", "/m");
 
 ui_print("Applying adaptation...");
-run_program("/system/bin/rm", "/m/etc/pulse/default.pa");
 package_extract_dir("m", "/m");
-run_program("/system/bin/rm", "/m/etc/udev/rules.d/70-.rules");
 ui_print("Done!");
 
